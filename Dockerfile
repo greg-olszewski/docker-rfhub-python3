@@ -7,7 +7,7 @@
 # More information about RF Hub available at
 # https://github.com/boakley/robotframework-hub
 ###############################################
-FROM python:3.7
+FROM python:3.6
 
 MAINTAINER Grzegorz Olszewski <grzegorz@olszewski.in>
 
