@@ -7,15 +7,15 @@
 # More information about RF Hub available at
 # https://github.com/boakley/robotframework-hub
 ###############################################
-FROM python:3.6
+FROM ubuntu:bionic
 
 MAINTAINER Grzegorz Olszewski <grzegorz@olszewski.in>
 
-RUN pip install --upgrade pip
-RUN pip install https://github.com/MaciejWiczk/robotframework-hub/zipball/master
+RUN apt-get update & apt-get install -y python3 python3-pip
+RUN pip3 install https://github.com/MaciejWiczk/robotframework-hub/zipball/master
 
 EXPOSE 7070
 
 VOLUME /keywords
 
-CMD python -m rfhub -i 0.0.0.0 /keywords &
+CMD python3 -m rfhub -i 0.0.0.0 /keywords &
