@@ -11,7 +11,10 @@ FROM ubuntu:bionic
 
 MAINTAINER Grzegorz Olszewski <grzegorz@olszewski.in>
 
-RUN apt-get update && apt-get install -y python3 python3-pip
+RUN apt-get update \
+&& apt-get install -y python3-dev python3-pip \
+&& cd /usr/local/bin \
+&& pip3 install --upgrade pip
 RUN pip3 install https://github.com/MaciejWiczk/robotframework-hub/zipball/master
 
 EXPOSE 7070
